@@ -7,37 +7,49 @@ public class NumberGuessingGame {
 
     public static void main(String[] args) {
        
+        Scanner input = new Scanner(System.in);
          System.out.println("==========Number Guessing Game==========");
-         System.out.println("Guess a number between 1 to 1000");
+        
 
-         Scanner input = new Scanner(System.in);
-         int guess = input.nextInt();
-
-         System.out.println("This is your guess:" + guess);
+         
 
          Random random = new Random();
-         int min = 1 , max = 1000;
+         int min = 1 , max = 1000, attempts = 0 , maxAttempts = 10;
          int randomNumber = min + random.nextInt(max);
 
-         //check generated number for testing
-         //NB: to be removed
-
-         System.out.println("Generated number:" + randomNumber);
+         
 
          boolean answer = false;
 
-         while(!answer)
+         while(!answer && attempts < maxAttempts)
          {
+             System.out.println("Guess a number between 1 to 1000");
+
+         
+             int guess = input.nextInt();
+            attempts++;
             if(guess > randomNumber)
             {
-                System.out.print("Too High. Try Again!!");
+                System.out.println("Too High. Try Again!!");
             }else if(guess < randomNumber)
             {
-                System.out.print("Too Low. Try Again");
+                System.out.println("Too Low. Try Again");
             }else{
                 System.out.print("Correct!You guessed the number");
                 answer = true;
             }
+         }
+         if(!answer)
+         {
+            System.out.println("Game over!! You have used all your " + maxAttempts + " attempts");
+            System.out.println("The correct answer is: " +  randomNumber);
+         }else {
+            System.out.println("You have guessed it in" + attempts + " attempts");
+
+            int score = (maxAttempts - attempts + 1) * 10;
+            if(score<0)score = 0;
+
+            System.out.println("Your score" + score );
          }
 
 

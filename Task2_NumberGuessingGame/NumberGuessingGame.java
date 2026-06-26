@@ -1,5 +1,5 @@
 package Task2_NumberGuessingGame;
 
-public NumberGuessingGame {
+public class NumberGuessingGame {
     
 }

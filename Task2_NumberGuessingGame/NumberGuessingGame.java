@@ -23,6 +23,24 @@ public class NumberGuessingGame {
          //NB: to be removed
 
          System.out.println("Generated number:" + randomNumber);
+
+         boolean answer = false;
+
+         while(!answer)
+         {
+            if(guess > randomNumber)
+            {
+                System.out.print("Too High. Try Again!!");
+            }else if(guess < randomNumber)
+            {
+                System.out.print("Too Low. Try Again");
+            }else{
+                System.out.print("Correct!You guessed the number");
+                answer = true;
+            }
+         }
+
+
  }
 
    

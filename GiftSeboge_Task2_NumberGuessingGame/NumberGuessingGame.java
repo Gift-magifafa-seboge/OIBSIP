@@ -30,16 +30,12 @@ public class NumberGuessingGame {
              System.out.println("Guess a number between 1 to 1000.");
                 while(!input.hasNextInt())
                 {
-                    System.out.println("Invalid!!Enter a  whole number.");
+                    System.out.print("Invalid!!Enter a  whole number.");
                     input.next();
                     System.out.println("Guess a number between 1 to 1000.");
                 }
          
              int guess = input.nextInt();
-
-             while (guess < 0 || guess > 1000) {
-                System.out.println("Guess a number between 1 to 1000.");
-             }
             attempts++;
             if(guess > randomNumber)
             {

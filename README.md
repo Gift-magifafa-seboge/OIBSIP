@@ -14,6 +14,7 @@ Task # : Coming soon
 
 Technologies Used
 ~ Java
+~Visual Studio Code
 ~ Netbeans
 ~ GitHub
 
